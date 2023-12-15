@@ -1,4 +1,5 @@
 import { useGlobalContext } from "../Context";
+import sublinks from "../data";
 
 const Navbar = () => {
   const { openSidebar, faBars } = useGlobalContext();
@@ -7,9 +8,14 @@ const Navbar = () => {
       <h3 className="logo">strapi</h3>
       <div>
         <ul className="nav-links">
-          <li className="nav-link">asd</li>
-          <li className="nav-link">asd</li>
-          <li className="nav-link">asd</li>
+          {sublinks.map((sublink) => {
+            const { pageId, page } = sublink;
+            return (
+              <li key={pageId} id={pageId} className="nav-link">
+                {page}
+              </li>
+            );
+          })}
         </ul>
       </div>
       <button className="toggle-btn" onClick={openSidebar}>
