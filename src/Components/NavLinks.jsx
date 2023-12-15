@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../Context";
 
 const NavLinks = () => {
-  const { updatePageId, sublinks } = useGlobalContext();
+  const { updatePageId, sublinks, toggleSubmenu } = useGlobalContext();
   return (
     <ul className="nav-links">
       {sublinks.map((sublink) => {
@@ -11,7 +11,8 @@ const NavLinks = () => {
             key={pageId}
             id={pageId}
             className="nav-link"
-            onMouseOver={updatePageId}
+            onMouseEnter={updatePageId}
+            onClick={toggleSubmenu}
           >
             {page}
           </li>

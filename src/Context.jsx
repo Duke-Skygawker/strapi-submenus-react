@@ -11,6 +11,7 @@ export const useGlobalContext = () => useContext(GlobalContext);
 const AppContext = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [pageId, setPageId] = useState(null);
+  const [showSubmenu, setShowSubmenu] = useState(false);
 
   const closeSidebar = () => {
     setShowSidebar(false);
@@ -20,7 +21,9 @@ const AppContext = ({ children }) => {
   };
   const updatePageId = (e) => {
     setPageId(e.target.id);
-    console.log(pageId);
+  };
+  const toggleSubmenu = () => {
+    setShowSubmenu(!showSubmenu);
   };
   return (
     <GlobalContext.Provider
@@ -28,8 +31,11 @@ const AppContext = ({ children }) => {
         openSidebar,
         closeSidebar,
         updatePageId,
+        toggleSubmenu,
         showSidebar,
         setShowSidebar,
+        showSubmenu,
+        setShowSubmenu,
         pageId,
         setPageId,
         closeCross: <ImCross />,
