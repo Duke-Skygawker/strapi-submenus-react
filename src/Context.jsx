@@ -12,10 +12,10 @@ const AppContext = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const closeSidebar = () => {
-    setShowSidebar(!false);
+    setShowSidebar(false);
   };
   const openSidebar = () => {
-    setShowSidebar(!true);
+    setShowSidebar(true);
   };
   return (
     <GlobalContext.Provider
