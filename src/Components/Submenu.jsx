@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useGlobalContext } from "../Context";
 
 const Submenu = () => {
