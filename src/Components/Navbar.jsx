@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../Context";
-import sublinks from "../data";
+import NavLinks from "./NavLinks";
 
 const Navbar = () => {
   const { openSidebar, faBars } = useGlobalContext();
@@ -7,16 +7,7 @@ const Navbar = () => {
     <nav className="nav-center">
       <h3 className="logo">strapi</h3>
       <div>
-        <ul className="nav-links">
-          {sublinks.map((sublink) => {
-            const { pageId, page } = sublink;
-            return (
-              <li key={pageId} id={pageId} className="nav-link">
-                {page}
-              </li>
-            );
-          })}
-        </ul>
+        <NavLinks />
       </div>
       <button className="toggle-btn" onClick={openSidebar}>
         {faBars}
