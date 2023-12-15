@@ -3,7 +3,6 @@ import { useGlobalContext } from "../Context";
 
 const Submenu = () => {
   const { showSubmenu, sublinks, pageId } = useGlobalContext();
-
   if (pageId) {
     const currentLinks = sublinks.filter((item) => item.pageId === pageId);
     const { page, links } = currentLinks[0];
